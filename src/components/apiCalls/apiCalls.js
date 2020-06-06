@@ -51,9 +51,27 @@ const mostPopularFishConsumed = [
 	'geoduck-farmed',
 ];
 
-export const fetchMostPopularFish = async () => {
-  const response = await fetch(`https://vrad-api.herokuapp.com${listing}`)
-  const data = await response.json();
+export const fetchMostPopularFishData = async () => {
+  const fetchPopularFish = await mostPopularFishConsumed.map(async popularFish => {
+    const response = await fetch('https://fe-cors-proxy.herokuapp.com', {
+      headers : {
+        "Target-URL" : `https://www.fishwatch.gov/api/species/${popularFish}`
+      }
+    })
+    const data = await response.json();
+    return data[0];
+  })
+  return Promise.all(fetchPopularFish, () => {console.log('fetchPopularFish in API calls', fetchPopularFish)
+});
+}
 
+export const fetchAllFishData = async () => {
+  const response = await fetch('https://fe-cors-proxy.herokuapp.com', {
+    headers: {
+      "Target-URL" : 'https://www.fishwatch.gov/api/species'
+    }
+  })
+  const data = await response.json();
+  console.log('all fish data', data);
   return data;
 }
