@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './App.css';
 import { fetchMostPopularFishData, fetchAllFishData} from '../apiCalls/apiCalls';
+import Landing from '../Landing/Landing';
 
 class App extends Component {
   constructor() {
@@ -59,7 +60,7 @@ class App extends Component {
               exact path="/"
               render={() => {
                 return(
-                  <h1>Testing</h1>
+                  <Landing />
                 )
               }}
               />
