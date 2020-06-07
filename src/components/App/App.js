@@ -16,7 +16,24 @@ class App extends Component {
 
   getPopularFish = async () => {
     const mostPopularFishData = await fetchMostPopularFishData();
-    console.log('mostPopularFishData in App', mostPopularFishData);
+    // console.log('mostPopularFishData', mostPopularFishData);
+    // this.setState({mostPopular : mostPopularFishData})
+    await this.setState({
+      mostPopular : mostPopularFishData
+    })
+    await console.log('state in app', this.state.mostPopular);
+    await console.log('atlantic sea scallop in app', this.state.mostPopular[0]['atlantic-sea-scallop']);
+    // this.updateStateWithData('mostPopular', mostPopularFishData);
+  }
+
+  findAFish = (stateProperty, name) => {
+    console.log('this.state with stateProperty arg', this.state[stateProperty]);
+    this.state[stateProperty].find(obj => {
+      if (obj.hasOwnProperty(name)) {
+        console.log('index of found name prop', this.state[stateProperty].indexOf(obj));
+        return this.state[stateProperty].indexOf(obj);
+      }
+    })
   }
 
   getAllFish = async () => {
@@ -24,9 +41,10 @@ class App extends Component {
     this.updateStateWithData('allFish', allFishData)
   }
 
-  componentDidMount = () => {
+  componentDidMount = async () => {
     // this.getAllFish();
-    this.getPopularFish();
+    await this.getPopularFish();
+    await this.findAFish('mostPopular', 'atlantic-skipjack-tuna')
   }
 
   updateStateWithData = (stateProperty, data) => {
