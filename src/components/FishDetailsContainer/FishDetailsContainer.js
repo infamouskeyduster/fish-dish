@@ -1,5 +1,5 @@
 import React from "react";
-// import "./FishDetailsContainer.css";
+import "./FishDetailsContainer.css";
 import PropTypes from "prop-types";
 
 const FishDetailsContainer = ({ fish, name }) => {
@@ -7,7 +7,7 @@ const FishDetailsContainer = ({ fish, name }) => {
   console.log('fishObj in FishDetailsContainer', fishObj);
   return(
     <div className="fish-details-container">
-    
+
       <h1>{fishObj.SpeciesName}</h1>
       <h3><i>{fishObj.ScientificName}</i></h3>
       <img
@@ -21,11 +21,7 @@ const FishDetailsContainer = ({ fish, name }) => {
 
       <div className="nutrition-table">
         <table>
-          <thead>
-            <tr>
               <th colSpan="2">Nutrition Facts</th>
-            </tr>
-          </thead>
           <tbody>
             <tr>
               <td>Calories</td>
@@ -52,7 +48,7 @@ const FishDetailsContainer = ({ fish, name }) => {
               <td>{fishObj.Protein}</td>
             </tr>
             <tr>
-              <td>Saturated Fatty Acids</td>
+              <td>Fatty Acids</td>
               <td>{fishObj.SaturatedFattyAcids}</td>
             </tr>
             <tr>
