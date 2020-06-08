@@ -6,7 +6,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 3.5px solid #33658A;
+    border-bottom: 3.5px solid #0B3954;
+    background: rgb(155,196,203);
+    background: linear-gradient(90deg, rgba(155,196,203,1) 0%, rgba(132,220,198,1) 90%);
   }
 
   .logotype {
@@ -22,7 +24,9 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    border-bottom: 6px solid #33658A;
+    border-bottom: 6px solid #0B3954;
+    background: rgb(132,220,198);
+    background: linear-gradient(90deg, rgba(132,220,198,1) 0%, rgba(51,101,138,1) 50%, rgba(11,57,84,1) 90%);
   }
 
   .logotype {
