@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './App.css';
 import { fetchMostPopularFishData, fetchAllFishData} from '../apiCalls/apiCalls';
 import Landing from '../Landing/Landing';
+import Header from '../Header/Header';
 
 class App extends Component {
   constructor() {
@@ -60,7 +61,9 @@ class App extends Component {
               exact path="/"
               render={() => {
                 return(
-                  <Landing />
+                  <div>
+                    <Header />
+                  </div>
                 )
               }}
               />

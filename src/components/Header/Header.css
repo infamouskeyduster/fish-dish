@@ -1,0 +1,32 @@
+@media only screen and (max-width: 900px) {
+  .header {
+    width: 100vw;
+    height: 9em;
+    background-color: #9BC4CB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 3.5px solid #33658A;
+  }
+
+  .logotype {
+    height: 70%;
+  }
+}
+
+@media only screen and (min-width: 901px) {
+  .header {
+    width: 100vw;
+    height: 14em;
+    background-color: #9BC4CB;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 6px solid #33658A;
+  }
+
+  .logotype {
+    height: 55%;
+    margin-left: 3em;
+  }
+}
