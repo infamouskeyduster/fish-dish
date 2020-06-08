@@ -5,6 +5,8 @@ import './App.css';
 import { fetchMostPopularFishData, fetchAllFishData} from '../apiCalls/apiCalls';
 import Landing from '../Landing/Landing';
 import Header from '../Header/Header';
+import FishCardsContainer from '../FishCardsContainer/FishCardsContainer';
+import FishDetailsContainer from '../FishDetailsContainer/FishDetailsContainer';
 
 class App extends Component {
   constructor() {
@@ -23,17 +25,18 @@ class App extends Component {
     await this.setState({
       mostPopular : mostPopularFishData
     })
-    await console.log('state in app', this.state.mostPopular);
-    await console.log('atlantic sea scallop in app', this.state.mostPopular[0]['atlantic-sea-scallop']);
+    // await console.log('state in app', this.state.mostPopular);
+    // await console.log('atlantic sea scallop in app', this.state.mostPopular[0]['atlantic-sea-scallop']);
     // this.updateStateWithData('mostPopular', mostPopularFishData);
   }
 
   findAFish = (stateProperty, name) => {
-    console.log('this.state with stateProperty arg', this.state[stateProperty]);
-    this.state[stateProperty].find(obj => {
+    return this.state[stateProperty].find(obj => {
       if (obj.hasOwnProperty(name)) {
-        console.log('index of found name prop', this.state[stateProperty].indexOf(obj));
-        return this.state[stateProperty].indexOf(obj);
+        const index = this.state[stateProperty].indexOf(obj);
+        const fishObj = this.state.mostPopular[index];
+
+        return fishObj;
       }
     })
   }
@@ -46,7 +49,7 @@ class App extends Component {
   componentDidMount = async () => {
     // this.getAllFish();
     await this.getPopularFish();
-    await this.findAFish('mostPopular', 'atlantic-skipjack-tuna')
+    // await this.findAFish('mostPopular', 'atlantic-skipjack-tuna')
   }
 
   updateStateWithData = (stateProperty, data) => {
@@ -57,6 +60,37 @@ class App extends Component {
     return(
       <main className='App'>
           <Switch>
+
+            <Route
+              exact path="/details/:speciesName"
+              render={({ match }) => {
+                const speciesNameFromMatch = match.params.speciesName;
+                const foundFishInDataSet = this.findAFish('mostPopular', speciesNameFromMatch)
+                console.log('foundFishInDataSet', foundFishInDataSet);
+                return(
+                  <div>
+                    <Header />
+                    <FishDetailsContainer
+                      name={speciesNameFromMatch}
+                      fish={foundFishInDataSet}
+                    />
+                  </div>
+                )
+              }}/>
+
+            <Route
+              exact path="/most-popular"
+              render={() => {
+                return(
+                  <div>
+                    <Header />
+                    <FishCardsContainer
+                      mostPopular={this.state.mostPopular}
+                    />
+                  </div>
+                )
+              }}/>
+
             <Route
               exact path="/"
               render={() => {
@@ -66,8 +100,8 @@ class App extends Component {
                     <Landing />
                   </div>
                 )
-              }}
-              />
+              }}/>
+
           </Switch>
       </main>
     )
