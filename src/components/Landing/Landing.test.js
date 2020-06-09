@@ -1,7 +1,7 @@
 import React from "react";
 import Landing from "./Landing";
 import { MemoryRouter } from "react-router-dom";
-import { render, fireEvent } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/";
 import { Router } from "react-router";
 
