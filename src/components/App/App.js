@@ -51,6 +51,14 @@ class App extends Component {
     }
   }
 
+  extractSavedFishFromDataSet = () => {
+    let savedFishDataSet = this.state.savedFish.map(currentFishName => {
+      return this.findAFish('mostPopular', currentFishName);
+    })
+    console.log('savedFishDataSet in App', savedFishDataSet);
+    return savedFishDataSet;
+  }
+
   getAllFish = async () => {
     const allFishData = await fetchAllFishData();
     this.updateStateWithData('allFish', allFishData)
@@ -90,14 +98,34 @@ class App extends Component {
               }}/>
 
             <Route
+              exact path="/saved-fish"
+              render={() => {
+                return(
+                  <div>
+                    <Header />
+                      <MenuButtons
+                        extractSavedFishFromDataSet={this.extractSavedFishFromDataSet}
+                      />
+                    <FishCardsContainer
+                      data={this.extractSavedFishFromDataSet()}
+                      savedFish={this.state.savedFish}
+                      addOrRemoveFishFromSavedFish={this.addOrRemoveFishFromSavedFish}
+                    />
+                  </div>
+                )
+              }}/>
+
+            <Route
               exact path="/most-popular"
               render={() => {
                 return(
                   <div>
                     <Header />
-                    <MenuButtons />
+                      <MenuButtons
+                        extractSavedFishFromDataSet={this.extractSavedFishFromDataSet}
+                      />
                     <FishCardsContainer
-                      mostPopular={this.state.mostPopular}
+                      data={this.state.mostPopular}
                       savedFish={this.state.savedFish}
                       addOrRemoveFishFromSavedFish={this.addOrRemoveFishFromSavedFish}
                     />

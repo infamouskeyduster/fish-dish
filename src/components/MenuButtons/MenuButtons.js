@@ -3,7 +3,7 @@ import "./MenuButtons.css";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-const MenuButtons = () => {
+const MenuButtons = ({ extractSavedFishFromDataSet }) => {
   return(
     <div className="menu-buttons-container">
       <Link to="/most-popular">
