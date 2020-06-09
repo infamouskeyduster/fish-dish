@@ -73,7 +73,7 @@ button {
   width: 80px;
   height: 80px;
   animation: spin 2s linear;
-  animation-iteration-count: 3;
+  animation-iteration-count: 5;
   animation-fill-mode: forwards;
   display: flex;
   align-self: center;

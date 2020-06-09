@@ -1,6 +1,8 @@
 .error-message-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media only screen and (max-width: 900px) {
@@ -23,6 +25,22 @@
     line-height: 2.5rem;
     color: #9BC4CB;
   }
+
+  .error-message-container hr {
+    margin: 5%;
+  }
+
+  .error-message-container ol {
+    width: 59%;
+    line-height: 1.45rem;
+  }
+
+  .error-message-container ol {
+    margin-top: 2%;
+    color: #33658A;
+    text-align: left;
+    line-height: 1.7rem;
+  }
 }
 
 @media only screen and (min-width: 901px) {
@@ -43,5 +61,20 @@
    width: 60%;
    line-height: 3rem;
    color: #9BC4CB;
+  }
+
+  .error-message-container hr {
+    margin: 2%;
+    width: 80%;
+  }
+
+  .error-message-container ol {
+    line-height: 1.45rem;
+  }
+
+  .error-message-container ol {
+    color: #33658A;
+    text-align: left;
+    line-height: 1.7rem;
   }
 }

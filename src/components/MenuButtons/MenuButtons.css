@@ -5,6 +5,12 @@
   justify-content: space-between;
 }
 
+.menu-buttons-container button:hover {
+  color: white;
+  background-color: #0B3954;
+  border: 2px solid #9BC4CB;
+}
+
 @media only screen and (max-width: 900px) {
   .menu-buttons-container {
     padding: 0 35px 0 35px;
@@ -23,7 +29,7 @@
     border: none;
     border-radius: 45px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
-    transition: all 0.3s ease 0s;
+    transition: all 0.45s ease 0s;
     cursor: pointer;
     border: 4px solid #9BC4CB;
   }
@@ -51,7 +57,7 @@
     border: none;
     border-radius: 45px;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.6);
-    transition: all 0.3s ease 0s;
+    transition: all 0.45s ease 0s;
     cursor: pointer;
     border: 4px solid #9BC4CB;
   }

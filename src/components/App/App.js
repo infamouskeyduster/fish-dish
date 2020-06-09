@@ -2,33 +2,33 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import './App.css';
-import { fetchMostPopularFishData, fetchAllFishData} from '../apiCalls/apiCalls';
+import { fetchMostPopularFishData } from '../apiCalls/apiCalls';
 import Landing from '../Landing/Landing';
 import Header from '../Header/Header';
 import FishCardsContainer from '../FishCardsContainer/FishCardsContainer';
 import FishDetailsContainer from '../FishDetailsContainer/FishDetailsContainer';
 import MenuButtons from '../MenuButtons/MenuButtons';
+import Search from '../Search/Search';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      allFish: [],
       mostPopular: [],
       savedFish: [],
+      searchInput: '',
     }
+  }
+
+  componentDidMount = async () => {
+    await this.getPopularFish();
   }
 
   getPopularFish = async () => {
     const mostPopularFishData = await fetchMostPopularFishData();
-    // console.log('mostPopularFishData', mostPopularFishData);
-    // this.setState({mostPopular : mostPopularFishData})
     await this.setState({
       mostPopular : mostPopularFishData
     })
-    // await console.log('state in app', this.state.mostPopular);
-    // await console.log('atlantic sea scallop in app', this.state.mostPopular[0]['atlantic-sea-scallop']);
-    // this.updateStateWithData('mostPopular', mostPopularFishData);
   }
 
   findAFish = (stateProperty, name) => {
@@ -55,29 +55,56 @@ class App extends Component {
     let savedFishDataSet = this.state.savedFish.map(currentFishName => {
       return this.findAFish('mostPopular', currentFishName);
     })
-    console.log('savedFishDataSet in App', savedFishDataSet);
     return savedFishDataSet;
-  }
-
-  getAllFish = async () => {
-    const allFishData = await fetchAllFishData();
-    this.updateStateWithData('allFish', allFishData)
-  }
-
-  componentDidMount = async () => {
-    // this.getAllFish();
-    await this.getPopularFish();
-    // await this.findAFish('mostPopular', 'atlantic-skipjack-tuna')
   }
 
   updateStateWithData = (stateProperty, data) => {
     this.setState({[stateProperty] : [data]})
   }
 
+  updateStateWithSearchInput = (event) => {
+    event.preventDefault();
+    let value = event.target.value
+    this.setState({searchInput: value})
+  }
+
+  filterMostPopularForSearchTerm = () => {
+    let filteredData = this.state.mostPopular.filter(currentFishObj => {
+      let fishName = Object.keys(currentFishObj)[0];
+      let lowercaseFishName = fishName.toLowerCase()
+      let lowercaseSearchTerm = this.state.searchInput.toLowerCase();
+
+      if(lowercaseFishName.includes(lowercaseSearchTerm)) {
+        return currentFishObj;
+      }
+    })
+    console.log('filtered data in filterMostPopularForSearchTerm', filteredData);
+    return filteredData;
+  }
+
   render = () => {
     return(
       <main className='App'>
           <Switch>
+
+            <Route
+              exact path="/search-fish/:searchInput"
+              render={({ match }) => {
+
+                const filteredSearchResult = this.filterMostPopularForSearchTerm();
+
+                return(
+                  <div>
+                    <Header />
+                    <MenuButtons />
+                    <FishCardsContainer
+                      data={filteredSearchResult}
+                      savedFish={this.state.savedFish}
+                      addOrRemoveFishFromSavedFish={this.addOrRemoveFishFromSavedFish}
+                      />
+                  </div>
+                )
+              }}/>
 
             <Route
               exact path="/details/:speciesName"
@@ -92,6 +119,23 @@ class App extends Component {
                     <FishDetailsContainer
                       name={speciesNameFromMatch}
                       fish={foundFishInDataSet}
+                    />
+                  </div>
+                )
+              }}/>
+
+            <Route
+              exact path="/search-fish"
+              render={() => {
+                return(
+                  <div>
+                    <Header />
+                      <MenuButtons
+                        extractSavedFishFromDataSet={this.extractSavedFishFromDataSet}
+                      />
+                    <Search
+                      updateStateWithSearchInput={this.updateStateWithSearchInput}
+                      searchInput={this.state.searchInput}
                     />
                   </div>
                 )

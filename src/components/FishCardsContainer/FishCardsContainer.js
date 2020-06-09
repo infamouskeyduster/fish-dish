@@ -5,13 +5,20 @@ import { Link } from "react-router-dom";
 import FishCard from '../FishCards/FishCard';
 
 const FishCardsContainer = ({ data, savedFish, addOrRemoveFishFromSavedFish }) => {
-  if(data.length === 0) {
+  if(!data.length) {
     return(
       <div className="error-message-container">
         <h2 className="error-message">
-          An error has occurred! Either there was a problem retrieving data,
-          or you do not have any saved fish!
+          An error has occurred!
+          There was a problem retrieving your data.
+          Potential causes for this error:
         </h2>
+        <hr />
+          <ol>
+            <li>The data has not been fully loaded from the server.</li>
+            <li>You do not have any saved fish yet.</li>
+            <li>Your search results did not return any data.</li>
+          </ol>
       </div>
     )
   }
