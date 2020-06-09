@@ -11,11 +11,11 @@ const Landing = () => {
         <Link to="/most-popular">
           <button className="most-popular-btn">Popular Fish</button>
         </Link>
-        <Link to="/my-dishes">
-          <button className="my-dishes-button">Saved Fish</button>
+        <Link to="/saved-fish">
+          <button className="saved-fish-btn">Saved Fish</button>
         </Link>
         <Link to="/search-fish">
-          <button className="my-dishes-button">Search Fish</button>
+          <button className="search-fish-btn">Search Fish</button>
         </Link>
       </div>
       <div className="loader"></div>

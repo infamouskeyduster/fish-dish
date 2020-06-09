@@ -7,6 +7,7 @@ import Landing from '../Landing/Landing';
 import Header from '../Header/Header';
 import FishCardsContainer from '../FishCardsContainer/FishCardsContainer';
 import FishDetailsContainer from '../FishDetailsContainer/FishDetailsContainer';
+import MenuButtons from '../MenuButtons/MenuButtons';
 
 class App extends Component {
   constructor() {
@@ -79,6 +80,7 @@ class App extends Component {
                 return(
                   <div>
                     <Header />
+                    <MenuButtons />
                     <FishDetailsContainer
                       name={speciesNameFromMatch}
                       fish={foundFishInDataSet}
@@ -93,6 +95,7 @@ class App extends Component {
                 return(
                   <div>
                     <Header />
+                    <MenuButtons />
                     <FishCardsContainer
                       mostPopular={this.state.mostPopular}
                       savedFish={this.state.savedFish}
