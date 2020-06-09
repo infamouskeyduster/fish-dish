@@ -3,7 +3,6 @@ import Landing from "./Landing";
 import { MemoryRouter } from "react-router-dom";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/";
-import { Router } from "react-router";
 
 describe("Landing", () => {
   it("as a user, I should see three main buttons on the Landing page.", () => {
