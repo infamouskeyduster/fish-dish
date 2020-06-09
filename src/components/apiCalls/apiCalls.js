@@ -30,7 +30,6 @@ const mostPopularFishConsumed = [
 	'pink-salmon',
 	'atlantic-salmon',
 
-
 	//POLLOCK
 	'alaska-pollock',
 	'atlantic-pollock',
@@ -47,53 +46,82 @@ const mostPopularFishConsumed = [
 	//CLAM
 	'atlantic-surfclam',
 	'ocean-quahog',
+
+	//CONCH
+	'queen-conch',
+
+	//SQUID
+	'california-market-squid',
+	'shortfin-squid',
+
+	//SHARK
+	'atlantic-blacktip-shark',
+	'atlantic-common-thresher-shark',
+	'atlantic-sharpnose-shark',
+	'atlantic-shortfin-mako-shark',
+	'pacific-common-thresher-shark',
+	'pacific-shortfin-mako-shark',
+	'atlantic-spiny-dogfish',
+
+	//SWORD and SAIL FISH
+	'north-atlantic-swordfish',
+	'north-pacific-swordfish',
+
+	//MAHI
+	'pacific-mahimahi',
+	'atlantic-mahimahi',
+
+	//HALIBUT
+	'pacific-halibut',
+	'atlantic-halibut',
+	'greenland-turbot',
+
+	//SNAPPER
+	'red-snapper',
+	'vermilion-snapper',
+	'bocaccio',
+	'tilefish',
+
+	//SEA BASS
+	'black-sea-bass',
+	'atlantic-striped-bass',
+	'wreckfish',
+	'widow-rockfish',
+
+	//MONKFISH
+	'monkfish',
+
+	//ANCHOVY
+	'northern-anchovy',
+
+	//FLOUNDER
+	'arrowtooth-flounder',
+	'summer-flounder',
+	'winter-flounder',
+	'yellowtail-flounder',
+	'rock-sole',
+	'flathead-sole',
+	'petrale-sole',
+	'yellowfin-sole',
+
+	//HERRING
+	'atlantic-herring',
+
+	//MACKEREL
+	'atlantic-mackerel',
+	'spanish-mackerel',
+	'pacific-mackerel',
+	'king-mackerel',
+
+	//WAHOO
+	'pacific-wahoo',
+	'atlantic-wahoo',
+
+	//GROUOPER
+	'black-grouper',
+	'red-grouper',
+	'gag-grouper',
 ];
-
-// export const fetchMostPopularFishData = async () => {
-//   const fetchPopularFish = mostPopularFishConsumed.reduce((allFish, currentFish) => {
-//
-//     mostPopularFishConsumed.forEach( async fish => {
-//       const response = await fetch('https://fe-cors-proxy.herokuapp.com', {
-//         headers : {
-//           "Target-URL" : `https://www.fishwatch.gov/api/species/${fish}`
-//         }
-//       })
-//
-//       const data = await response.json();
-//       const dataObj = data[0];
-//
-//       let fishNameNoDash = fish.split('-').join('');
-//
-//       if (!allFish[fishNameNoDash]) {
-//         allFish[fishNameNoDash] = dataObj;
-//       }
-//
-//     })
-//
-//     return allFish;
-//   }, {})
-//
-//   console.log('fetchPopularFish', fetchPopularFish);
-//   await console.log('fetchPopularFish tuna', fetchPopularFish['atlanticbigeyetuna']);
-//   return fetchPopularFish;
-// }
-
-// export const fetchMostPopularFishData = async () => {
-//   const fetchPopularFish = await mostPopularFishConsumed.reduce( async (acc, popularFish) => {
-//     const response = await fetch('https://fe-cors-proxy.herokuapp.com', {
-//       headers : {
-//         "Target-URL" : `https://www.fishwatch.gov/api/species/${popularFish}`
-//       }
-//     })
-//     const data = await response.json();
-//     const dataObj = data[0];
-//     if (!acc[popularFish]) {
-//       acc[popularFish] = dataObj;
-//     }
-//     return acc;
-//   }, {})
-//   console.log('fetchPopularFish in API calls', fetchPopularFish);
-// }
 
 export const fetchMostPopularFishData = async () => {
   const fetchPopularFish = await mostPopularFishConsumed.map(async popularFish => {
@@ -138,13 +166,15 @@ export const fetchMostPopularFishData = async () => {
 });
 }
 
-export const fetchAllFishData = async () => {
-  const response = await fetch('https://fe-cors-proxy.herokuapp.com', {
-    headers: {
-      "Target-URL" : 'https://www.fishwatch.gov/api/species'
-    }
-  })
-  const data = await response.json();
-  console.log('all fish data', data);
-  return data;
-}
+//BELOW is a function to fetch All Fish Data from API
+
+// export const fetchAllFishData = async () => {
+//   const response = await fetch('https://fe-cors-proxy.herokuapp.com', {
+//     headers: {
+//       "Target-URL" : 'https://www.fishwatch.gov/api/species'
+//     }
+//   })
+//   const data = await response.json();
+//   console.log('all fish data', data);
+//   return data;
+// }
