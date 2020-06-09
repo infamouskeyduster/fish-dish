@@ -1,7 +1,6 @@
 import React from "react";
 import "./FishCardsContainer.css";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
 import FishCard from '../FishCards/FishCard';
 
 const FishCardsContainer = ({ data, savedFish, addOrRemoveFishFromSavedFish }) => {

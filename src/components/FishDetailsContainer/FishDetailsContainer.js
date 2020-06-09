@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const FishDetailsContainer = ({ fish, name }) => {
 
   const fishObj = fish[name];
-  
+
   return(
     <div className="fish-details-container">
 

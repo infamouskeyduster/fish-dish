@@ -6,8 +6,8 @@ import "@testing-library/jest-dom/";
 
 let fish, savedFish;
 
-describe('FishCardsContainer', () => {
-  it.only('as a user I should see a card for each fish inside the FishCardsContainer', () => {
+describe('Fish Cards', () => {
+  it('as a user I should see a card for each fish', () => {
     fish = {
       "atlantic-sea-scallop":
         {

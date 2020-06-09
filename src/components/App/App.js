@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import './App.css';
 import { fetchMostPopularFishData } from '../apiCalls/apiCalls';
 import Landing from '../Landing/Landing';
@@ -78,13 +77,14 @@ class App extends Component {
         return currentFishObj;
       }
     })
-    console.log('filtered data in filterMostPopularForSearchTerm', filteredData);
+
     return filteredData;
   }
 
   render = () => {
     return(
       <main className='App'>
+
           <Switch>
 
             <Route
@@ -109,9 +109,10 @@ class App extends Component {
             <Route
               exact path="/details/:speciesName"
               render={({ match }) => {
+
                 const speciesNameFromMatch = match.params.speciesName;
                 const foundFishInDataSet = this.findAFish('mostPopular', speciesNameFromMatch)
-                console.log('foundFishInDataSet', foundFishInDataSet);
+
                 return(
                   <div>
                     <Header />

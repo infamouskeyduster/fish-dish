@@ -17,4 +17,9 @@ const Search = ({ updateStateWithSearchInput, searchInput}) => {
   )
 }
 
+Search.propTypes = {
+  updateStateWithSearchInput: PropTypes.func,
+  searchInput: PropTypes.string,
+};
+
 export default Search;
