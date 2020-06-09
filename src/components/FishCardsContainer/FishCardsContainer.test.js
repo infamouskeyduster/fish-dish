@@ -4,7 +4,7 @@ import { MemoryRouter } from "react-router-dom";
 import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/";
 
-let data;
+let data, savedFish;
 
 describe('FishCardsContainer', () => {
   it.only('as a user I should see a card for each fish inside the FishCardsContainer', () => {
@@ -41,14 +41,15 @@ describe('FishCardsContainer', () => {
       },
     ];
 
-    let mockSavedFish = ["atlantic-sea-scallop"];
+    let savedFish = ["atlantic-sea-scallop"];
+
     let mockAddOrRemoveFish = jest.fn();
 
     const { getByText, getAllByRole } = render (
       <MemoryRouter>
         <FishCardsContainer
           data={data}
-          savedFish={mockSavedFish}
+          savedFish={savedFish}
           addOrRemoveFishFromSavedFish={mockAddOrRemoveFish}
         />
       </MemoryRouter>

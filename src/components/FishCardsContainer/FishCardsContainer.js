@@ -41,4 +41,10 @@ const FishCardsContainer = ({ data, savedFish, addOrRemoveFishFromSavedFish }) =
   )
 }
 
+FishCardsContainer.propTypes = {
+  data: PropTypes.array,
+  savedFish: PropTypes.array,
+  addOrRemoveFishFromSavedFish: PropTypes.func,
+};
+
 export default FishCardsContainer;

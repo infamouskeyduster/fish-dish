@@ -130,9 +130,7 @@ class App extends Component {
                 return(
                   <div>
                     <Header />
-                      <MenuButtons
-                        extractSavedFishFromDataSet={this.extractSavedFishFromDataSet}
-                      />
+                      <MenuButtons />
                     <Search
                       updateStateWithSearchInput={this.updateStateWithSearchInput}
                       searchInput={this.state.searchInput}
@@ -147,9 +145,7 @@ class App extends Component {
                 return(
                   <div>
                     <Header />
-                      <MenuButtons
-                        extractSavedFishFromDataSet={this.extractSavedFishFromDataSet}
-                      />
+                      <MenuButtons />
                     <FishCardsContainer
                       data={this.extractSavedFishFromDataSet()}
                       savedFish={this.state.savedFish}
@@ -165,9 +161,7 @@ class App extends Component {
                 return(
                   <div>
                     <Header />
-                      <MenuButtons
-                        extractSavedFishFromDataSet={this.extractSavedFishFromDataSet}
-                      />
+                      <MenuButtons />
                     <FishCardsContainer
                       data={this.state.mostPopular}
                       savedFish={this.state.savedFish}

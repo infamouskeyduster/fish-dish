@@ -40,4 +40,11 @@ const FishCard = ({ fish, savedFish, addOrRemoveFishFromSavedFish }) => {
     </div>
   );
 }
+
+FishCard.propTypes = {
+  fish: PropTypes.object,
+  savedFish: PropTypes.array,
+  addOrRemoveFishFromSavedFish: PropTypes.func,
+};
+
 export default FishCard;
