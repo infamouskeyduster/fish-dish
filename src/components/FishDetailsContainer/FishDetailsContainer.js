@@ -3,8 +3,9 @@ import "./FishDetailsContainer.css";
 import PropTypes from "prop-types";
 
 const FishDetailsContainer = ({ fish, name }) => {
+
   const fishObj = fish[name];
-  console.log('fishObj in FishDetailsContainer', fishObj);
+  
   return(
     <div className="fish-details-container">
 
@@ -68,5 +69,10 @@ const FishDetailsContainer = ({ fish, name }) => {
     </div>
   )
 }
+
+FishDetailsContainer.propTypes = {
+  fish: PropTypes.object,
+  name: PropTypes.string,
+};
 
 export default FishDetailsContainer;
