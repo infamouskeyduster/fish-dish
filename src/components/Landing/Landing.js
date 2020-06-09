@@ -12,7 +12,7 @@ const Landing = () => {
           <button className="most-popular-btn">Popular Fish</button>
         </Link>
         <Link to="/my-dishes">
-          <button className="my-dishes-button">My Dishes</button>
+          <button className="my-dishes-button">Saved Fish</button>
         </Link>
         <Link to="/search-fish">
           <button className="my-dishes-button">Search Fish</button>

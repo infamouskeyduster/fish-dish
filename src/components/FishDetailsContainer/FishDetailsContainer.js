@@ -9,15 +9,14 @@ const FishDetailsContainer = ({ fish, name }) => {
     <div className="fish-details-container">
 
       <h1>{fishObj.SpeciesName}</h1>
+      <hr />
       <h3><i>{fishObj.ScientificName}</i></h3>
       <img
         src={fishObj.SpeciesIllustrationPhoto.src}
         alt={fishObj.SpeciesIllustrationPhoto.alt}
       />
 
-      <hr/>
       <p>{fishObj.Quote}</p>
-      <hr/>
 
       <div className="nutrition-table">
         <table>

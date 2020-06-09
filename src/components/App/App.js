@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       allFish: [],
       mostPopular: [],
-      yourDish: [],
+      savedFish: [],
     }
   }
 
@@ -39,6 +39,15 @@ class App extends Component {
         return fishObj;
       }
     })
+  }
+
+  addOrRemoveFishFromSavedFish = (fishName) => {
+    if(this.state.savedFish.includes(fishName)) {
+      let newSavedFishArr = this.state.savedFish.filter(fish => fish !== fishName);
+      this.setState({savedFish : newSavedFishArr});
+    } else {
+      this.setState({savedFish:[ ...this.state.savedFish, fishName ]});
+    }
   }
 
   getAllFish = async () => {
@@ -86,6 +95,8 @@ class App extends Component {
                     <Header />
                     <FishCardsContainer
                       mostPopular={this.state.mostPopular}
+                      savedFish={this.state.savedFish}
+                      addOrRemoveFishFromSavedFish={this.addOrRemoveFishFromSavedFish}
                     />
                   </div>
                 )

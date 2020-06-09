@@ -9,12 +9,24 @@
   padding: 35px 0 35px 0;
 }
 
+.star-svg {
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 900px) {
   .fish-card {
     width: 80%;
     height: 15rem;
     margin-bottom: 7%;
     box-shadow: 4px 7px 11px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+
+  .star-svg {
+    width: 35px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
   }
 
   .fish-card button {
@@ -44,6 +56,14 @@
     height: 17rem;
     margin-bottom: 3%;
     box-shadow: 4px 7px 11px rgba(0, 0, 0, 0.3);
+    position: relative;
+  }
+
+  .star-svg {
+    width: 45px;
+    position: absolute;
+    top: 0;
+    right: 15px;
   }
 
   .fish-card button {
