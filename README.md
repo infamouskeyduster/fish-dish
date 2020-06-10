@@ -1,13 +1,13 @@
 # Fish Dish
 Fish Dish is an Application designed with the concerning pescatarian in mind. The application provides an expansive interactive list of all of the most popular ocean fish species consumed in the U.S.. As a user, you can:
-- see and search all of the fish by _name_
-- save fish (by clicking the _star_ button on a fish's card)
-- see all of your _saved_ fish by navigating to the __saved button__
+- see and search all of the fish by ___name___
+- save fish (by clicking the ___star___ button on a fish's card)
+- see all of your ___saved___ fish by navigating to the __saved button__
 
 ## Application Deployed at:
 - https://fish-dish.netlify.app/
 
-## Gif of working Website
+## Screenshots of Deployed Application
 ![Fish Dish Landing Screen](https://user-images.githubusercontent.com/49289426/84216374-890ea780-aa86-11ea-926c-7ee12c217c9e.png)
 
 ![Fish Dish Popular Screen](https://user-images.githubusercontent.com/49289426/84216409-a9d6fd00-aa86-11ea-87bb-d841e09c7d58.png)
@@ -47,22 +47,12 @@ npm install
 
 ## Technologies Used
 - React
-- React Hooks
 - create-react-app
 - React Testing Library
 - Jest
 - DOM Testing Library
 - JavaScript
-- MediaStream Recording API
-
-## Future Iterations
-- Implement functionality to delete a recording
-- Implement storage for recordings and images to persist
-- Build out styling for desktop view
-- Bring in Google Maps API for geo-tagging
-- Implement login feature
-- Allow users to create/add their own destination
-- Allow users to upload their own images for each destination
+- FishWatch.gov Species Content API
 
 ## Contributors:
 
