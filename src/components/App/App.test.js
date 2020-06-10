@@ -82,7 +82,6 @@ describe('APP', () => {
  });
 
  it ('As a user, when I hit the POPULAR button I should see the popular fish cards populate', async () => {
-
    let data =
     [
       {"atlantic-sea-scallop":
@@ -131,7 +130,10 @@ describe('APP', () => {
 
    expect(popularFishButton).toBeInTheDocument();
    fireEvent.click(popularFishButton);
-   //data-testid="fish-cards-container"
+
+   const fishCardsContainer = await waitFor(() => getByTestId('fish-cards-container'));
+   expect(fishCardsContainer).toBeInTheDocument();
+
    const fishCard = await waitFor(() => getByText("Atlantic Sea Scallop"));
    expect(fishCard).toBeInTheDocument();
  });
