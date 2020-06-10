@@ -6,7 +6,10 @@ import FishCard from '../FishCards/FishCard';
 const FishCardsContainer = ({ data, savedFish, addOrRemoveFishFromSavedFish }) => {
   if(!data.length) {
     return(
-      <div className="error-message-container">
+      <div
+        className="error-message-container"
+        data-testid="error-message-container"
+      >
         <h2 className="error-message">
           An error has occurred!
           There was a problem retrieving your data.
@@ -34,7 +37,10 @@ const FishCardsContainer = ({ data, savedFish, addOrRemoveFishFromSavedFish }) =
   })
 
   return(
-    <div className="fish-cards-container">
+    <div
+      className="fish-cards-container"
+      data-testid="fish-cards-container"
+    >
       {allFishCards}
     </div>
   )

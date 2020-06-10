@@ -5,7 +5,10 @@ import { Link } from "react-router-dom";
 
 const Search = ({ updateStateWithSearchInput, searchInput}) => {
   return(
-    <div className="search-container">
+    <div
+      className="search-container"
+      data-testid="search-container"
+      >
       <form>
         <input id="search-input" placeholder="Search all popular fish…" onChange={updateStateWithSearchInput}></input>
         <br />
