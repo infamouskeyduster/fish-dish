@@ -1,68 +1,69 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Fish Dish
+Fish Dish is an Application designed with the concerning pescatarian in mind. The application provides an expansive interactive list of all of the most popular ocean fish species consumed in the U.S.. As a user, you can:
+- see and search all of the fish by _name_
+- save fish (by clicking the _star_ button on a fish's card)
+- see all of your _saved_ fish by navigating to the __saved button__
 
-## Available Scripts
+## Application Deployed at:
+- https://fish-dish.netlify.app/
 
-In the project directory, you can run:
+## Gif of working Website
+![Fish Dish Landing Screen](https://user-images.githubusercontent.com/49289426/84216374-890ea780-aa86-11ea-926c-7ee12c217c9e.png)
 
-### `npm start`
+![Fish Dish Popular Screen](https://user-images.githubusercontent.com/49289426/84216409-a9d6fd00-aa86-11ea-87bb-d841e09c7d58.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Fish Dish Saving a Fish](https://user-images.githubusercontent.com/49289426/84216433-c2471780-aa86-11ea-8e73-0ea16403ae1c.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+![Fish Dish Fish Details](https://user-images.githubusercontent.com/49289426/84216494-ec98d500-aa86-11ea-8c62-e9a1ab38a2f8.png)
 
-### `npm test`
+![Fish Dish Viewing Saved Fish](https://user-images.githubusercontent.com/49289426/84216523-076b4980-aa87-11ea-8534-708e91dd2233.png)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Fish Dish Search](https://user-images.githubusercontent.com/49289426/84216545-1ce07380-aa87-11ea-9a21-7e40ef6709be.png)
 
-### `npm run build`
+![Fish Dish Search with Term](https://user-images.githubusercontent.com/49289426/84216578-2ec21680-aa87-11ea-97b0-1cbe9557574c.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Fish Dish Search Results](https://user-images.githubusercontent.com/49289426/84216605-400b2300-aa87-11ea-877e-6ad4079f63bc.png)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+![Fish Dish Error](https://user-images.githubusercontent.com/49289426/84216623-53b68980-aa87-11ea-9de1-46ce5bedf2b3.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Goals and Objectives
+- Although this App was built with mobile first in mind, it is fully functional on Apple and Android mobile devices, as well in most modern browsers
+- Create a beautiful and functional __UI / UX__
+- Continue honing REACT skills by:
+  - utilizing life-cycle-methods
+  - creating SRP components
+  - Using functional v. class components in a well thought-out fashion
+- Research a new API and implement (chose _FishWatch.gov_ __Species Content API__)
+- Write robust unit and integration tests
 
-### `npm run eject`
+## Setup
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+1. Clone down this repo
+2. Install the library dependencies. Run:
+```
+npm install
+```
+3. Then, run `npm start` in your terminal. Go to `http://localhost:3000/` and you should see the page there! Then, you can enter `control + c` in your terminal to stop the server at any time.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Technologies Used
+- React
+- React Hooks
+- create-react-app
+- React Testing Library
+- Jest
+- DOM Testing Library
+- JavaScript
+- MediaStream Recording API
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Future Iterations
+- Implement functionality to delete a recording
+- Implement storage for recordings and images to persist
+- Build out styling for desktop view
+- Bring in Google Maps API for geo-tagging
+- Implement login feature
+- Allow users to create/add their own destination
+- Allow users to upload their own images for each destination
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Contributors:
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[John Watterson](https://github.com/infamouskeyduster)
