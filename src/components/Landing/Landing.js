@@ -21,4 +21,13 @@ const Landing = () => {
   )
 }
 
+// CODE CRITIQUE
+// if (mostPoupular.length) {
+// show buttons
+// } else {
+// show spinner
+// }
+//
+// use iconography to indicate a smart or poor choice of fish on the fish tile itself
+
 export default Landing;

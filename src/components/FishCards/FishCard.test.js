@@ -64,4 +64,6 @@ describe('Fish Cards', () => {
     expect(filledStarImage).toBeInTheDocument();
   });
 
+  //Add a test that involves the add or remove fish method invocation
+  // test that the correct ID (name) is passed into fn();
 });

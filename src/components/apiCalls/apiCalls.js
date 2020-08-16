@@ -69,7 +69,7 @@ const mostPopularFishConsumed = [
 
 	//MAHI
 	'pacific-mahimahi',
-	'atlantic-mahimahi',
+	// 'atlantic-mahimahi', THIS REQUEST BROKE THE API 08-16-2020
 
 	//HALIBUT
 	'pacific-halibut',

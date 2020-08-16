@@ -137,4 +137,6 @@ describe('APP', () => {
    const fishCard = await waitFor(() => getByText("Atlantic Sea Scallop"));
    expect(fishCard).toBeInTheDocument();
  });
+
+ //Add integration test to test the user saving a specific fish
 });
